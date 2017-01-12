@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+  <string name="app_name">Automata</string>
+  <string name="about_menu_item">About</string>
+  <string name="facebook_app_id">127063687423751</string>
+  <string name="fb_dialog_title">Publish to Facebook</string>
+  <string name="fb_dialog_text">Your highest score is %d. Post this to your wall?</string>
+  <string name="fb_post_name">I just got a score of %d on Automata for Android!</string>
+  <string name="fb_post_link">http://market.android.com/details?id=com.theopenart.automata.free</string>
+  <string name="fb_post_picture_url">http://dl.dropbox.com/u/4765435/automata_fb_icon.png</string>
+  <string name="level_automata_fname">automata_map.bmp</string>
+  <string name="level_chooser_title">Choose a level:</string>
+  <string name="level_huge_fname">automata_huge_map.bmp</string>
+  <string name="level_path">maps/</string>
+  <string name="level_tut_adv_fname">tutorial2_map.bmp</string>
+  <string name="level_tut_beg_fname">tutorial1_map.bmp</string>
+  <string name="newgame_button">New Game</string>
+  <string name="resume_button">Resume</string>
+  <string name="tut_advanced_dialog_title">Automata Tutorial</string>
+  <string name="tut_advanced_done_text1">These two species will compete for food in the level. Creating more and bigger creatures will increase your score more quickly, but too many and they will eat all the food and die off. Also, creating a new species costs you 20% of your current score.</string>
+  <string name="tut_advanced_done_text2">That concludes the Automata tutorial! You can continue to play this level for as long as you like. More levels are available from the title screen.</string>
+  <string name="tut_advanced_done_text2_free">That concludes the Automata tutorial! You can continue to play this level for as long as you like. If you enjoy Automata, you should get the full version <a href="http://market.android.com/details?id=com.theopenart.automata">here</a> to unlock more levels!</string>
+  <string name="tut_advanced_fail_red_green_blue_text">Oops! Try again. You need to add a creature with one each of red, green, and blue cells to this level.</string>
+  <string name="tut_advanced_fail_grow_red_green_blue_text">Oops! All your creatures died. They probably didn\'t get any food. Try again, this time placing your new creature near where it can find all three colors of food.</string>
+  <string name="tut_advanced_fail_grow_green_blue_redx2_text">Oops! All your new creatures died. They probably didn\'t get any food. Try again, this time placing your new creature near where it can find all three colors of food.</string>
+  <string name="tut_advanced_fail_green_blue_redX2_text">Oops! Try again. You need to add a creature with two red cells, and one each of blue and green, to this level.</string>
+  <string name="tut_advanced_teach_green_blue_redx2_text">Great job! Let\'s make a similar creature now, except this time add an extra red cell. You\'ll notice this creature moves a little faster.</string>
+  <string name="tut_advanced_teach_red_green_blue_text1">You create creatures using red, green, and blue cells. The red cells make your creature move faster. The green cells make your creature live longer. Finally, the blue cells improve your creature\'s \"vision\", making it better at finding food.</string>
+  <string name="tut_advanced_teach_red_green_blue_text2">Design a creature with one red cell, one green cell, and one blue cell. Then place the creature somewhere in the level. This creature will need to eat one food of each color.</string>
+  <string name="tut_advanced_welcome_text">Let\'s learn about the different colors of cell and how they affect the creature you design.</string>
+  <string name="tut_beginner_dialog_title">Automata Tutorial</string>
+  <string name="tut_beginner_done_text">Remember, you can always pause the game by tapping on the screen, but only if the species creator is empty.</string>
+  <string name="tut_beginner_fail_red_text">Oops! Try again. You need to add a single-celled red creature to this level.</string>
+  <string name="tut_beginner_fail_grow_red_text">Oops! All your red creatures died. They probably didn\'t get any food. Try again, this time placing your new creature near some red food.</string>
+  <string name="tut_beginner_fail_grow_green_blue_text">Oops! All your green and blue creatures died. They probably didn\'t get any food. Try again, this time placing your new creature near some green and blue food.</string>
+  <string name="tut_beginner_fail_green_blue_text">Oops! Try again. You need to add a double-celled green and blue creature to this level.</string>
+  <string name="tut_beginner_teach_green_blue_text1">Great job! Your red creatures will continue to grow and eat food. Let\'s try creating a species with two cells now.</string>
+  <string name="tut_beginner_teach_green_blue_text2">Put two cells in the species creator, and tap on the cells to change the color. If you add too many and want to remove one, press and hold on the cell you want to remove. Create a creature with one blue cell and one green cell now.</string>
+  <string name="tut_beginner_teach_red_text1">First, let\'s create a red creature and place it in the level. To design a creature, tap on an orb in the species creator at the bottom of the screen. Then, tap anywhere in the level to put the new creature there. Be sure to place your new creature near some red food!</string>
+  <string name="tut_beginner_teach_red_text2">Oh, and if you accidentally add too many cells to the species creator, you can remove them by pressing and holding on the cell you want to remove.</string>
+  <string name="tut_beginner_welcome_text">Welcome to the Automata tutorial! In this tutorial you will learn how to design and create different species of creature and place them in the world.</string>
+  <string name="version">PAID</string>
+
+</resources>
