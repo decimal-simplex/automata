@@ -1,19 +1,11 @@
 package com.theopenart.automata;
 
-import java.io.IOException;
-import java.util.Timer;
-import java.util.TimerTask;
-
-import org.json.JSONException;
-import org.json.JSONObject;
-
 import android.app.Activity;
 import android.app.AlertDialog;
 import android.app.Dialog;
 import android.content.Context;
 import android.content.DialogInterface;
 import android.content.Intent;
-import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.graphics.Typeface;
 import android.os.Bundle;
@@ -21,22 +13,19 @@ import android.os.Vibrator;
 import android.view.Gravity;
 import android.view.MotionEvent;
 import android.view.View;
-import android.view.View.OnClickListener;
 import android.view.View.OnTouchListener;
-import android.widget.Button;
 import android.widget.LinearLayout;
 import android.widget.LinearLayout.LayoutParams;
 import android.widget.TextView;
 
-//import com.facebook.android.DialogError;
-//import com.facebook.android.Facebook;
-//import com.facebook.android.Facebook.DialogListener;
-//import com.facebook.android.FacebookError;
 import com.theopenart.automata.SpeciesCreator.SpeciesCreatorChangeListener;
 import com.theopenart.automata.ecosystem.Ecosystem;
 import com.theopenart.automata.ecosystem.Ecosystem.EcosystemScoreChangeListener;
 import com.theopenart.automata.ecosystem.Jelly;
 import com.theopenart.automata.ecosystem.Species;
+
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class AutomataActivity extends Activity {
 
@@ -61,10 +50,6 @@ public class AutomataActivity extends Activity {
 
   private static final String SCORE_FORMAT    = "CREATURES:%4d  SPECIES:%2d\n" + "SCORE:%,8d  HIGH SCORE:%,8d";
 
-//  private Facebook            _facebook;
-
-  private SharedPreferences   _mPrefs;
-
   private Ecosystem           _ecosystem;
 
   private TextView            _scoreView;
@@ -75,17 +60,11 @@ public class AutomataActivity extends Activity {
 
   private Timer               _timer          = new Timer();
 
-//  private Button              _shareButton;
-
   /** Called when the activity is first created. */
   @Override
   public void onCreate(Bundle savedInstanceState) {
     super.onCreate(savedInstanceState);
     setContentView(R.layout.main);
-
-//    _facebook = new Facebook(getResources().getString(R.string.facebook_app_id));
-
-//    _shareButton = new Button(this);
 
     if (EcosystemManager.INSTANCE.getEcosystem() == null) {
       EcosystemManager.INSTANCE.setParentActivity(this);
@@ -121,11 +100,6 @@ public class AutomataActivity extends Activity {
     LayoutParams scrParams = new LinearLayout.LayoutParams(LayoutParams.WRAP_CONTENT, LayoutParams.MATCH_PARENT, 1);
     scoreLayout.addView(_scoreView, scrParams);
 
-    // The share button.
-//    _shareButton.setBackgroundResource(R.drawable.share_button_bg);
-//    LayoutParams shrParams = new LinearLayout.LayoutParams(80, 40, 0);
-//    scoreLayout.addView(_shareButton, shrParams);
-
     // The score layout.
     LayoutParams scrLyoutParams = new LinearLayout.LayoutParams(LayoutParams.MATCH_PARENT, 80, 0);
     gameplayLayout.addView(scoreLayout, scrLyoutParams);
@@ -142,7 +116,7 @@ public class AutomataActivity extends Activity {
 
           public void run() {
             speciesCreatorView.invalidate();
-          };
+          }
         });
       }
     });
@@ -197,20 +171,6 @@ public class AutomataActivity extends Activity {
         return true;
       }
     });
-
-//    _shareButton.setOnClickListener(new OnClickListener() {
-//
-//      @Override
-//      public void onClick(View v) {
-//        EcosystemManager.INSTANCE.getEcosystem().pause();
-//
-//        int score = EcosystemManager.INSTANCE.getEcosystem().getHighestScore();
-//
-//        showScorePublishConfirmDlg(score);
-//
-//        EcosystemManager.INSTANCE.getEcosystem().resume();
-//      }
-//    });
   }
 
   @Override
@@ -266,82 +226,5 @@ public class AutomataActivity extends Activity {
     params.putString("picture", getString(R.string.fb_post_picture_url));
     params.putString("name", String.format(getString(R.string.fb_post_name), score));
     params.putString("link", getString(R.string.fb_post_link));
-
-    // Get existing access_token if any.
-//    _mPrefs = getPreferences(MODE_PRIVATE);
-//    String access_token = _mPrefs.getString("access_token", null);
-//    long expires = _mPrefs.getLong("access_expires", 0);
-//    if (access_token != null) {
-//      _facebook.setAccessToken(access_token);
-//    }
-//    if (expires != 0) {
-//      _facebook.setAccessExpires(expires);
-//    }
-//
-//    // Only call authorize if the access_token has expired.
-//    if (!_facebook.isSessionValid()) {
-//      authAndSendFacebookRequest(params);
-//    }
-//    else {
-//      sendFacebookRequest(params, true);
-//    }
   }
-
-//  private void authAndSendFacebookRequest(final Bundle params) {
-//    _facebook.authorize(AutomataActivity.this, new String[] { "publish_stream" }, new DialogListener() {
-//
-//      @Override
-//      public void onComplete(Bundle values) {
-//        SharedPreferences.Editor editor = _mPrefs.edit();
-//        editor.putString("access_token", _facebook.getAccessToken());
-//        editor.putLong("access_expires", _facebook.getAccessExpires());
-//        editor.commit();
-////        Log.d(getClass().getCanonicalName(), "Facebook auth'd successfully");
-//        sendFacebookRequest(params, false);
-//      }
-//
-//      @Override
-//      public void onFacebookError(FacebookError error) {
-////        Log.e(getClass().getCanonicalName(), "Facebook error authorizing Facebook");
-//      }
-//
-//      @Override
-//      public void onError(DialogError e) {
-////        Log.e(getClass().getCanonicalName(), "internal error authorizing Facebook");
-//      }
-//
-//      @Override
-//      public void onCancel() {
-////        Log.d(getClass().getCanonicalName(), "Facebook auth canceled");
-//      }
-//    });
-//  }
-
-//  private void sendFacebookRequest(final Bundle params, final boolean retry) {
-//    new Thread(new Runnable() {
-//
-//      public void run() {
-//
-//        try {
-//          String responseString = _facebook.request("me/feed", params, "POST");
-////          Log.d(getClass().getCanonicalName(), responseString);
-//
-//          JSONObject responseJson = new JSONObject(responseString);
-//          if (responseJson.has("error") && retry) {
-//            JSONObject error = responseJson.getJSONObject("error");
-//            if (error.has("type") && error.getString("type").equals("OAuthException")) {
-//              // give the user a chance to authorize the app
-//              authAndSendFacebookRequest(params);
-//            }
-//          }
-//        }
-//        catch (IOException ioe) {
-////          Log.e(getClass().getCanonicalName(), "IOException POSTing to Facebook, giving up...", ioe);
-//        }
-//        catch (JSONException jsone) {
-////          Log.e(getClass().getCanonicalName(), "Couldn't parse the Facebook response, giving up", jsone);
-//        }
-//      };
-//    }).start();
-//  }
 }
