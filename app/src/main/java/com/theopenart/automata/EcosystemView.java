@@ -2,6 +2,7 @@ package com.theopenart.automata;
 
 import java.util.ArrayList;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.graphics.Bitmap;
 import android.graphics.Canvas;
@@ -276,6 +277,7 @@ public class EcosystemView extends SurfaceView implements SurfaceHolder.Callback
     _ecosystem.resume();
   }
 
+  @SuppressLint("WrongCall")
   @Override
   public void surfaceChanged(SurfaceHolder holder, int format, int width, int height) {
     _blockWidth = (float)width / _ecosystem.getWidth();
@@ -306,6 +308,7 @@ public class EcosystemView extends SurfaceView implements SurfaceHolder.Callback
     _ecosystem.removeEcosystemNewMapListener(this);
   }
 
+  @SuppressLint("WrongCall")
   @Override
   public void onEcosystemChanged() {
     Canvas canvas = null;
